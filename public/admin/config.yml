@@ -87,6 +87,24 @@ collections:
                 name: "name"
                 widget: "string"
                 hint: "Tag name for displaying on the site"
+      - name: "industries"
+        label: "Industries"
+        file: "meta/industries.yml"
+        description: "List of industries"
+        fields:
+          - name: industries
+            label: industries
+            label_singular: "Industry"
+            widget: list
+            fields:
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                hint: "The part of a URL identifies the industry"
+              - label: "Display Name"
+                name: "name"
+                widget: "string"
+                hint: "Industry name for displaying on the site"
 
   - name: "posts"
     label: "Posts"
@@ -139,3 +157,54 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+  - name: "companies"
+    label: "Portfolio Companies"
+    folder: "src/data/companies"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        dateFormat: "YYYY-MM-DD"
+        timeFormat: false
+      - label: Author
+        name: "author"
+        widget: relation
+        collection: "meta"
+        file: "authors"
+        searchFields:
+          - "authors.*.name"
+        displayFields:
+          - "authors.*.name"
+        valueField: "authors.*.slug"
+      - label: Industry
+        label_singular: "Industry"
+        name: "industries"
+        widget: list
+        summary: "{{fields.industry}}"
+        field:
+          label: Industry
+          name: industry
+          widget: relation
+          collection: "meta"
+          file: "industriess"
+          searchFields:
+            - "industriess.*.name"
+          displayFields:
+            - "industriess.*.name"
+          valueField: "industriess.*.slug"
+      - label: "Description"
+        name: "description"
+        widget: "markdown"
+      - label: "Company Website"
+        name: "website"
+        widget: "string"
