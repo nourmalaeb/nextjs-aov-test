@@ -1,0 +1,11 @@
+industries:
+  - name: Building
+    slug: building
+  - slug: manufacturing
+    name: Manufacturing
+  - slug: food
+    name: Food
+  - slug: agriculture
+    name: Agriculture
+  - slug: energy
+    name: Energy
