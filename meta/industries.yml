@@ -1,8 +1,8 @@
 industries:
-  - name: Building
-    slug: building
   - slug: manufacturing
     name: Manufacturing
+  - name: Building
+    slug: building
   - slug: food
     name: Food
   - slug: agriculture
