@@ -159,6 +159,7 @@ collections:
         widget: "markdown"
   - name: "companies"
     label: "Portfolio Companies"
+    label_singular: "Portfolio Company"
     folder: "src/data/companies"
     extension: "mdx"
     format: "frontmatter"
