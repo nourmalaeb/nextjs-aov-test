@@ -196,11 +196,11 @@ collections:
           name: industry
           widget: relation
           collection: "meta"
-          file: "industriess"
+          file: "industries"
           searchFields:
-            - "industriess.*.name"
+            - "industries.*.name"
           displayFields:
-            - "industriess.*.name"
+            - "industries.*.name"
           valueField: "industriess.*.slug"
       - label: "Description"
         name: "description"
