@@ -192,7 +192,7 @@ collections:
             - "industries.*.name"
           displayFields:
             - "industries.*.name"
-          valueField: "industriess.*.slug"
+          valueField: "industries.*.slug"
       - label: "Description"
         name: "description"
         widget: "markdown"
